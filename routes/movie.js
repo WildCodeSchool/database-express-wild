@@ -22,6 +22,8 @@ router.get('/seed', (req, res) => {
 })
 
 router.get('/', moviesModel.getAllMovies)
+router.get('/names', moviesModel.getMoviesNames)
+router.get('/ids', moviesModel.getMoviesIds)
 
 router.get('/:id', (req, res) => {
     connection.query("SELECT * FROM movies where id = ?", [req.params.id] , (err, result, fields) => {
